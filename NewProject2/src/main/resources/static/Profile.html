@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+
+<link rel="stylesheet"
+	href="assets/css/Registration-Form-with-Photo.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+<link rel="stylesheet" href="assets/css/Footer-Basic.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	
+<nav
+		class="navbar navbar-light navbar-expand-md navigation-clean-search"
+		style="background-color: #82c6f8;">
+		<div class="container">
+			<a class="navbar-brand" ><img width="30%" src="assets/img/logo.png" border=0></a>
+			<button class="navbar-toggler" data-toggle="collapse"
+				data-target="#navcol-1">
+				<span class="sr-only">Toggle navigation</span><span
+					class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navcol-1">
+				
+				<form class="form-inline mr-auto" target="_self">
+					<div class="form-group">
+						<label for="search-field"><i class="fa fa-search"
+							style="color: rgb(116, 60, 60);"></i></label><input
+							class="form-control search-field" type="search" name="search"
+							id="search-field" style="background-color: #e7e7e7;" placeholder="Search">
+					</div>
+				</form>
+
+
+			</div>
+
+		</div>
+
+
+		<div id="koubaki" style="margin-right: 1%">
+			<button id="mapbutton"  class="btn btn-link btn-block"  type="button"
+				onclick=" window.open('https://www.google.com/maps/place/%CE%9D%CE%A4%CE%91%CE%A4%CE%91%CE%92%CE%95%CE%A1%CE%A3+%CE%95.%CE%A0.%CE%95./@38.0101821,23.7824094,19z/data=!3m1!4b1!4m5!3m4!1s0x14a1986751530031:0xc3ea4e9f4abbb876!8m2!3d38.010181!4d23.7829566','_blank')"><span style="color:black"><strong>Find us</strong> </span><span style="color: "><i class="material-icons">place</i></span>
+				</button>
+		</div>
+		<a class="btn btn-dark action-button" role="button"
+			href="Login.html" id="logout">Log out</a>
+		
+	</nav>
+	<h1 class="text-center" id="gg" style="background-color: grey;"></h1>
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <div class="d-flex justify-content-start">
+                                <div class="image-container">
+                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                    <div class="middle">
+                                        <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
+                                        <input type="file" style="display: none;" id="profilePicture" name="file" />
+                                    </div>
+                                </div>
+                                <div class="userData ml-3">
+                                   
+                                 
+                                </div>
+                                <div class="ml-auto">
+                                    <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                    </li>
+                                   
+                                </ul>
+                                <div class="tab-content ml-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                        
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Full Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6" id="div1">
+                                                <h3 id="h1"> </h3>
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Email</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                 <h3 id="h2"> </h3>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Phone</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                 <h3 id="h3"> </h3>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Company</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                 <h3 id="h4"> </h3>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        
+
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+	
+	
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	
+		
+	<script type="text/javascript">
+	var email = localStorage.getItem("email");
+	 $(function() {
+		
+		var urls = '/findUser/' + email;
+		$.ajax({
+			type: 'GET',
+			url: urls,
+			success: function (humans){
+				$("#gg").append("Welcome   <strong>"+humans.name+"</strong>!");
+				$("#h1").append(humans.name);
+				$("#h2").append(humans.email);
+				$("#h3").append(humans.phone);
+				$("#h4").append(humans.company);
+			 	
+			}
+		});
+	});   
+
+	 $("#logout").click(function() {
+			localStorage.clear();
+			
+		});  
+	
+</script>
+	
+	
+</body>
+</html>

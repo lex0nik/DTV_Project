@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+
+<link rel="stylesheet"
+	href="assets/css/Registration-Form-with-Photo.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+<link rel="stylesheet" href="assets/css/Footer-Basic.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+
+</head>
+
+<body>
+	<nav
+		class="navbar navbar-light navbar-expand-md navigation-clean-search"
+		style="background-color: #82c6f8;">
+		<div class="container">
+			<a class="navbar-brand"><img width="30%"
+				src="assets/img/logo.png" border=0></a>
+			<button class="navbar-toggler" data-toggle="collapse"
+				data-target="#navcol-1">
+				<span class="sr-only">Toggle navigation</span><span
+					class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navcol-1">
+
+				<form class="form-inline mr-auto" target="_self">
+					<div class="form-group">
+						<label for="search-field"><i class="fa fa-search"
+							style="color: rgb(116, 60, 60);"></i></label><input
+							class="form-control search-field" type="search" name="search"
+							id="search-field" style="background-color: #e7e7e7;"
+							placeholder="Search">
+					</div>
+				</form>
+
+
+			</div>
+
+		</div>
+
+
+		<div id="koubaki" style="margin-right: 1%">
+			<button id="mapbutton" class="btn btn-link btn-block" type="button"
+				onclick=" window.open('https://www.google.com/maps/place/%CE%9D%CE%A4%CE%91%CE%A4%CE%91%CE%92%CE%95%CE%A1%CE%A3+%CE%95.%CE%A0.%CE%95./@38.0101821,23.7824094,19z/data=!3m1!4b1!4m5!3m4!1s0x14a1986751530031:0xc3ea4e9f4abbb876!8m2!3d38.010181!4d23.7829566','_blank')">
+				<span style="color: black"><strong>Find us</strong> </span><span
+					style="color:"><i class="material-icons">place</i></span>
+			</button>
+		</div>
+		<a class="btn btn-dark action-button" role="button" href="Login.html">Login
+		</a> <a class="btn btn-light action-button" role="button"
+			href="Register.html">Sign up </a>
+	</nav>
+	<h1 class="text-center">
+		<strong>Dataverse</strong> Project
+	</h1>
+	<div class="register-photo">
+		<div class="form-container col-xs-12" style="width: 600px;">
+			<form method="post" name="registration" id="form" action="/register">
+				<h2 class="text-center">
+					<strong>Create</strong> an account.
+				</h2>
+
+
+				<input class="form-control" type="email" name="email" id="email"
+					placeholder="Email"> <input class="form-control"
+					type="password" id="password" name="password"
+					placeholder="Password"> <input class="form-control"
+					type="password" id="password2" name="password2"
+					placeholder="Confirm Password"> <input class="form-control"
+					type="text" name="name" id="name" placeholder="Full name">
+				<input class="form-control" type="text" name="company" id="company"
+					placeholder="Company"> <input class="form-control"
+					type="text" name="phone" id="phone" placeholder="Phone">
+
+				<div class="form-group"></div>
+				<div class="form-group">
+					<button id="b1" class="btn btn-primary btn-block" type="submit">Sign
+						Up</button>
+				</div>
+				<a href="Login.html" class="already">You already have an
+					account? Login here.</a>
+			</form>
+
+		</div>
+	</div>
+	<div class="footer-basic">
+		<footer>
+			<div class="social">
+				<a href="https://www.linkedin.com/in/alex-chandolias/"><i
+					class="icon ion-social-linkedin"></i></a> <a
+					href="https://www.facebook.com/alex.handolias"><i
+					class="icon ion-social-facebook"></i></a> <a
+					href="https://www.instagram.com/alex_chandol/"><i
+					class="icon ion-social-instagram"></i></a>
+
+
+			</div>
+		</footer>
+	</div>
+
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+	<script
+		src=" https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+
+
+	<script src="form-validation.js"></script>
+	<script type="text/javascript">
+		$('#form').submit(function(event) {
+
+			event.preventDefault();
+			var formdata = $(form).serialize();
+			$.ajax({
+
+				type : 'POST',
+				url : '/register',
+				data : formdata,
+				/*   processData: false, */
+
+				success : function(data) {
+					/* $('#response pre').html( JSON.stringify( data )); */
+
+					if (data.status == "FAILED") {
+						
+						alert(data.message);
+						window.location = '/Register.html';
+					}
+					if (data.status == "SUCCESS") {
+
+						alert(data.message);
+						window.location = '/Login.html';
+					}
+				},
+				error : function(jqXhr, textStatus, errorThrown) {
+					alert(" fail connection");
+					window.location = '/Register.html';
+				}
+			});
+		});
+	</script>
+
+</body>
+
+</html>
